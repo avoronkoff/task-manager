@@ -1,0 +1,11 @@
+.edit-btn {
+  position: absolute;
+  font-size: 13px;
+  right: 5px;
+  top: 5px;
+}
+
+.add-card {
+  margin-bottom: 15px;
+}
+

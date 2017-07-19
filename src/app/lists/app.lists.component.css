@@ -1,0 +1,20 @@
+.list_item {
+  border: 1px solid rgba(0,0,0,.03);
+  box-shadow: 0 2px 2px rgba(0,0,0,.24), 0 0 2px rgba(0,0,0,.12);
+  padding-bottom: 20px;
+  min-height: 220px;
+}
+
+.well {
+  position: relative;
+}
+
+.add_list {
+  padding: 15px 0;
+}
+
+@media screen and (max-width: 768px) {
+  .list_item {
+    margin-bottom: 20px;
+  }
+}

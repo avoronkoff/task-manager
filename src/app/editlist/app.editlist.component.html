@@ -1,0 +1,11 @@
+<div *ngIf="!editing" class="edit-block">
+  <button type="button" class="btn btn-xs btn-warning btn-outline edit-btn" (click)="editing = !editing">
+    edit
+  </button>
+  <h5 class="text-muted text-uppercase">{{card.description}}</h5>
+</div>
+<div *ngIf="editing">
+  <input type="text" class="form-control add-card" [(ngModel)]="card.description">
+  <button class="btn btn-primary" (click)="updateCard(card, id)">save</button>
+  <button class="btn btn-danger" (click)="deleteCard(card.id, id)">delete card</button>
+</div>

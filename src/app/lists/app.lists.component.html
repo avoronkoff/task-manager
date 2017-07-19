@@ -1,0 +1,30 @@
+<div class="container">
+    <div class="col-md-3 col-sm-6 col-xs-12 list_item" *ngFor="let list of lists; let ind = index">
+      <div class="card" dnd-sortable-container [sortableData]="list.cards" [dropZones]="['widget-dropZone']">
+        <div class="card-block">
+          <button type="button" class="close" aria-label="Close" (click)="delete(list); $event.stopPropagation()">
+            <span aria-hidden="true">&times;</span>
+          </button>
+          <h3 class="card-title">{{list.listName}}</h3>
+          <section class="well" *ngFor="let card of list.cards;let i = index"  dnd-sortable [sortableIndex]="i" [dragEnabled]="!dragOperation"
+                   [dragData]="card">
+            <app-editlist [card]="card" [lists]="lists" [id]="ind"></app-editlist>
+          </section>
+          <app-add-card [lists]="lists" [id]="ind"></app-add-card>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-3 col-sm-6 col-xs-12 list_item">
+      <div class="card">
+        <div class="card-block">
+          <h3 class="card-title">Add list</h3>
+          <section class="add_list">
+            <input type="text" class="form-control" name="newList" [(ngModel)]="newList" ngDefaultControl>
+          </section>
+          <button class="btn btn-success" (click)="addLists(newList)" >add</button>
+        </div>
+      </div>
+    </div>
+</div>
+
